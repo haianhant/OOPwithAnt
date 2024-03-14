@@ -13,16 +13,16 @@ public class exercise64 {
         switch (month) {
             case "January": case "Jan": case "Jan.": case "1":
             case "March" : case "Mar" : case "Mars": case "3":
-            case "May" : case "May." : case "5":
-            case "July" : case "Jul" : case "Jul.": case "7":
+            case "May" : case "5":
+            case "July" : case "Jul": case "7":
             case "August" : case "Aug" : case "Aug.": case "8":
             case "October" : case "Oct" : case "Oct.": case "10":
             case "December" : case "Dec" : case "Dec.": case "12":
                 JOptionPane.showMessageDialog(null, "The "+month+" month has 31 days");
                 break;
             case "April" : case "Apr" : case "Apr.": case "4":
-            case "June" : case "Jun" : case "Jun.": case "6":
-            case "September" : case "Sep" : case "Sep.": case "9":
+            case "June" : case "Jun" : case "6":
+            case "September" : case "Sep" : case "Sept.": case "9":
             case "November" : case "Nov" : case "Nov.": case "11":
                 JOptionPane.showMessageDialog(null, "The "+month+" month has 30 days");
                 break;
