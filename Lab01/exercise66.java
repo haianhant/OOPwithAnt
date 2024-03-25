@@ -1,4 +1,4 @@
-package Java.OOP.OOPLab1;
+package Java.OOP.Lab01;
 import java.util.Scanner;
 import java.util.Arrays;
 public class exercise66 {
