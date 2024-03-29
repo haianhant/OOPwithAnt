@@ -1,0 +1,3 @@
+Yes, Java allows us to create multiple constructor methods for a class, each with different parameters. 
+This is known as constructor overloading. 
+We can have one constructor that takes a title as a parameter and another that takes a category.
