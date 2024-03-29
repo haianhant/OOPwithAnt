@@ -1,4 +1,9 @@
 No, Java allows us to create multiple constructor methods for a class, each with different parameters 
 and this is known as constructor overloading. 
 
-But in this case, it is duplicate method DigitalVideoDisc(String) and it is error
+But in this case, it is duplicate method DigitalVideoDisc(String).
+Java does not allow you to create two constructors with the same number and type of parameters. 
+Since both constructors you’re suggesting take a single String parameter, 
+Java would not be able to differentiate between the two. 
+This is because constructors are differentiated by the number and types of their parameters, 
+not by the parameter names or intended use.
