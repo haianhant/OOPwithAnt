@@ -8,6 +8,7 @@ class DigitalVideoDisc{
     private float cost;
 
     public DigitalVideoDisc(String title, String category, String director, int length, float cost){
+        super();
         this.title = title;
         this.category = category;
         this.director = director;
@@ -21,12 +22,14 @@ class DigitalVideoDisc{
     }
     
     public DigitalVideoDisc(String title, String category, float cost) {
+        super();
         this.title = title;
         this.category = category;
         this.cost = cost;
     }
     
     public DigitalVideoDisc(String title, String category, String director, float cost){
+        super();
         this.title = title;
         this.category = category;
         this.director = director;
