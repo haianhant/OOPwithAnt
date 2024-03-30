@@ -16,14 +16,6 @@ class DigitalVideoDisc{
         this.cost = cost;
     } 
 
-    public DigitalVideoDisc(String title) {
-        super();
-        this.title = title;
-    }
-    public DigitalVideoDisc(String category) {
-        super();
-        this.category = category;
-    }
     public DigitalVideoDisc(String title, String category, float cost) {
         super();
         this.title = title;
