@@ -1,0 +1,38 @@
+1. What class should implement the Comparable interface?
+The Comparable interface is typically implemented by classes when there is a need for a single comparison criterion. Conversely, if multiple custom comparators are required for a given type, each offering distinct interpretations of sorting, then those classes can utilize custom comparators. Hence, the Comparable interface is preferred for classes requiring sorting based on a single attribute.
+
+2. In those classes, how should you implement the compareTo()method to reflect the ordering that
+we want?
+In those classes, the implementation of the compareTo() method is crucial to achieving the desired ordering. By implementing the Comparable interface, one can leverage the inherent sorting methods, such as Collections.sort(list), to enforce the specified ordering.
+
+3. Can we have two ordering rules of the item (by title then cost and by cost then title) if we use this
+Comparable interface approach?
+No, it's not feasible to establish two distinct ordering rules for an item when utilizing the Comparable interface. This is because the Comparable interface supports only a single comparison criterion.
+
+4. Suppose the DVDs have a different ordering rule from the other media types, that is by title, then
+decreasing length, then cost. How would you modify your code to allow this?
+To accommodate the differing ordering rule for DVDs compared to other media types, one can employ the Comparator class. By overriding the compare method within the Comparator class, custom sorting logic tailored to the specific requirements of DVDs can be implemented.
+
+import java.util.Comparator;
+
+class UniqueComparator implements Comparator<CartItem> {
+    @Override
+    public int compare(CartItem firstItem, CartItem secondItem) {
+        // So sánh theo tên sản phẩm
+        int nameComparison = firstItem.getTitle().compareTo(secondItem.getTitle());
+        if (nameComparison != 0) {
+            return nameComparison;
+        } else {
+            // Nếu tên giống nhau, so sánh theo độ dài giảm dần
+            if (firstItem instanceof MediaItem && secondItem instanceof MediaItem) {
+                // So sánh các mặt hàng media theo độ dài giảm dần
+                return Integer.compare(((MediaItem) secondItem).getDuration(), ((MediaItem) firstItem).getDuration());
+            } else {
+                // Đối với các mặt hàng không phải media, coi chúng như có độ dài bằng nhau
+                // So sánh theo giá cả nếu chúng không phải là media hoặc cả hai là media có cùng độ dài
+                return Double.compare(firstItem.getCost(), secondItem.getCost());
+            }
+        }
+    }
+}
+
