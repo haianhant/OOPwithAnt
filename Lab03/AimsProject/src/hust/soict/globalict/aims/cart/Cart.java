@@ -27,6 +27,14 @@ public class Cart {
     	}
     }
     
+    public void filterById(int id) {
+    	for (Media m: itemsOrdered) {
+    		if (m.getId() == id) {
+    			System.out.println(m.getId() + " " + m.toString());
+    		}
+    	}
+    }
+    
     public void filterByTitle(String title) {
     	for (Media m: itemsOrdered) {
     		if (m.getTitle().contains(title)) {

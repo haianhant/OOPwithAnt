@@ -38,6 +38,17 @@ public class CompactDisc extends Disc implements Playable  {
 		return length;
 	}
 	
+	public CompactDisc(int id, String title, String category, String director,String artist, int length , float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+        this.id = id;
+        this.director = director;
+        this.length = length;
+        this.artist = artist;
+    }
+	
 	public CompactDisc(String title, String category, float cost) {
         super();
         this.title = title;
@@ -47,9 +58,20 @@ public class CompactDisc extends Disc implements Playable  {
 
 	@Override
 	public void play() {
+		System.out.println("Playing CD: " + this.getTitle());
+		System.out.println("CD length: " + this.getLength());
+		if(this.getLength() == 0 ) {
+			System.out.println("This CD cannot be played!");
+		}
+		
 		for (Track track: this.tracks) {
-			System.out.println("Playing DVD: " + track.getTitle());
-			System.out.println("DVD length: " + track.getLength());
+			if (track.getLength() > 0 ) {
+				System.out.println("Playing Track: " + track.getTitle());
+				System.out.println("Track length: " + track.getLength());
+			}
+			else {
+				System.out.println("The Track Cannot Be Played! ");
+			}
 		}
 	}
 	

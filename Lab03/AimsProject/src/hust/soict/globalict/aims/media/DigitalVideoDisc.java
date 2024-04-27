@@ -1,14 +1,15 @@
 package hust.soict.globalict.aims.media;
 
+
 public class DigitalVideoDisc extends Disc implements Playable {
 	public String getTitle() {
         return this.title;
     }
-
+	
     public String getCategory() {
         return this.category;
     }
-
+    
     public String getDirector() {
         return this.director;
     }
@@ -20,7 +21,17 @@ public class DigitalVideoDisc extends Disc implements Playable {
     public float getCost() {
         return this.cost;
     }
-
+    
+    public DigitalVideoDisc(int id, String title, String category, String director, int length, float cost) {
+        super();
+        this.title = title;
+        this.category = category;
+        this.cost = cost;
+        this.director = director;
+        this.length = length;
+        this.id = id;
+    }
+    
     public DigitalVideoDisc(String title) {
         super();
         this.title = title;
@@ -59,9 +70,13 @@ public class DigitalVideoDisc extends Disc implements Playable {
     
 	@Override
 	public void play() {
-		// TODO Auto-generated method stub
-		System.out.println("Playing DVD: " + this.getTitle());
-		System.out.println("DVD length: " + this.getLength());
+		if (this.getLength() > 0 ) {
+			System.out.println("Playing DVD: " + this.getTitle());
+			System.out.println("DVD length: " + this.getLength());
+		}
+		else {
+			System.out.println("The DVD cannot play");
+		}
 	}
 
 }

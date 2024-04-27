@@ -18,6 +18,14 @@ public class Book extends Media implements Playable {
 				this.authors.remove(authorName);
 			}
 		}
+		
+		public Book(int id, String title, String category, float cost) {
+	        super();
+	        this.title = title;
+	        this.category = category;
+	        this.cost = cost;
+	        this.id = id;
+	    }
 
 		public Book(String title, String category, float cost) {
 	        super();
@@ -25,6 +33,7 @@ public class Book extends Media implements Playable {
 	        this.category = category;
 	        this.cost = cost;
 	    }
+		
 		
 	    @Override
 	    public String toString() {
